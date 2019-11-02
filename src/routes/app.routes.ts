@@ -10,6 +10,9 @@ const router = Router();
 // Define routes
 router.get('/transactions', (req, res: Response) => {
 	const allRecords: any = data;
+	if (req.query.flat) {
+		return res.send(flatten(constructResponse(allRecords.default, req.query)));
+	}
 	return res.send(constructResponse(allRecords.default, req.query));
 });
 
