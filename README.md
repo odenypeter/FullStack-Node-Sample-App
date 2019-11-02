@@ -29,6 +29,9 @@ run the following commands;
 `docker build -t riskident-fulstack-task .` _ensure you add the last '.' on the command above_  
 `docker run -p 3000:3000 riskident-fulstack-task`
 
+# Run tests
+`npm run test`
+
 Head to:
 http://localhost:3000 to see the web interface
 
