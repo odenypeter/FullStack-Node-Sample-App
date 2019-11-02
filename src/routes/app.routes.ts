@@ -22,6 +22,10 @@ router.get('/transactions', (req, res: Response) => {
  * @param {any} params - query params
  */
 function constructResponse(rawData: any[], params: any) {
+	// return all records if there are no filter params
+	if (!params.transactionId && !params.confidenceLevel) {
+		return rawData;
+	}
 	// destructure query params
 	const { transactionId, confidenceLevel } = params;
 	const parentObject: any = findParent(rawData, transactionId);
